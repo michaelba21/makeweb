@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <title>Personal Portfolio</title>
+    <style>
+        /* Reset default margin and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: auto; /* Changed to auto to allow scrolling */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Background layer (optional) */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            z-index: -1;
+        }
+
+        /* Particle container */
+        #particles-js {
+            position: fixed; /* Changed to fixed to cover the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Place it above the background but below the content */
+        }
+
+        /* Main content */
+        .content {
+            position: relative;
+            z-index: 1; /* Place content above the particle animation */
+            color: white;
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .science {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            color: yellow;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            text-align: right;
+            font-size: 18px;
+            top: 0;
+            right: 0;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        #welcome-section, #projects, #contact {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            position: relative; /* Ensure content is above particles */
+            z-index: 1; /* Ensure content is above particles */
+        }
+
+        #welcome-section {
+            background-color: rgba(16, 126, 86, 0.8); /* Added transparency */
+        }
+
+        #projects {
+            background-color: rgba(172, 213, 169, 0.8); /* Added transparency */
+        }
+
+        #contact {
+            background-color: rgba(131, 90%, 40%, 0.8); /* Added transparency */
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+            gap: 16px; /* Space between items */
+            padding: 16px;
+        }
+
+        .grid-item {
+            text-align: center;
+            background: #fff;
+            border: 2px solid #ddd;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border: 4px solid brown;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+
+        .grid-item p {
+            margin: 8px 0;
+        }
+
+        .grid-item a {
+            display: block;
+            margin: 4px 0;
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+        .grid-item a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* Stack items on smaller screens */
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            position: relative;
+            z-index: 1; /* Ensure footer is above particles */
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background layer (optional) -->
+    <div class="background"></div>
+
+    <!-- Particle animation container -->
+    <div id="particles-js"></div>
+
+    <nav id="navbar">
+        <a href="#welcome-section" aria-label="Go to Welcome Section">Welcome</a>
+        <a href="#projects" aria-label="Go to Projects Section">Projects</a>
+        <a href="https://michaelba21.github.io/certificate4/" target="_blank" aria-label="Visit my CV page">Certificates</a>
+        <a href="#contact" aria-label="Go to Contact Section">Contact Me</a>
+    </nav>
+
+    <main>
+        <section id="welcome-section">
+            <h1>Thanks for visiting my page!</h1>
+            <img src="https://i.pinimg.com/1200x/d2/09/cf/d209cf078af672a12e37a5eb150ce54c.jpg" alt="Profile photo of Michael Barak" style="border-radius: 50%; width: 100px;">
+            <h2>Michael Barak</h2>
+            <p>My Personal Portfolio</p>
+        </section>
+
+        <section id="projects">
+            <h1>Projects</h1>
+            <h2>Here's what I've worked on!</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="https://cdn.kwork.com/pics/t3/55/32195796-6622c7ff2f0c2.jpg" alt="Placeholder image for Responsive Web Design">
+                    <p>Responsive Web Design and Front End Development</p>
+                    <a href="https://www.browserstack.com/guide/responsive-web-design" target="_blank" rel="noopener noreferrer" aria-label="Learn HTML on FreeCodeCamp">Responsive Web Design and Front End Development</a>
+                    <a href="https://cs50.harvard.edu/web/2020/weeks/0/" target="_blank" rel="noopener noreferrer" aria-label="Learn HTML on FreeCodeCamp">HTML</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Organizing" target="_blank" rel="noopener noreferrer" aria-label="Learn CSS on FreeCodeCamp">CSS</a>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" aria-label="Learn javascript on FreeCodeCamp">Javascript</a>
+                    <a href="https://jquery.com/" target="_blank" rel="noopener noreferrer" aria-label="Learn jQuery on FreeCodeCamp">jQuery</a>
+                    <a href="https://www.w3schools.com/sass/sass_intro.asp" target="_blank" rel="noopener noreferrer" aria-label="Learn SASS on FreeCodeCamp">SASS</a>
+                    <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" aria-label="Learn React on FreeCodeCamp">React</a>
+                    <a href="https://redux.js.org/" target="_blank" rel="noopener noreferrer" aria-label="Learn Redux on FreeCodeCamp">Redux</a>
+                </div>
+                <div class="grid-item">
+                    <img src="https://global.toho-u.ac.jp/wp-content/uploads/2021/04/top_pharmacy.jpg" alt="University of Groningen building">
+                    <p>Master study at University of Groningen</p>
+                    <a href="https://www.rug.nl/masters/medical-pharmaceutical-sciences/?lang=en" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Medical Pharmaceutical Sciences at RUG">Medical Pharmaceutical Sciences at RUG</a>
+                </div>
+                <div class="grid-item">
+                    <img src="https://medicalupdateonline.com/wp-content/uploads/2023/05/AdobeStock_497136494.jpg" alt="Hanze University of Applied Sciences">
+                    <p>HBO Study at Hanze University of Applied Sciences Groningen</p>
+                    <a href="https://www.hanze.nl/nl/opleidingen/voltijd/bachelor/biologie-en-medisch-laboratoriumonderzoek-medische-diagnostiek" target="_blank" rel="noopener noreferrer" aria-label="Learn about Biology and Medical Laboratory Diagnostics at Hanze">HBO Biology and Medical Laboratory Diagnostics</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h1>Contact Me!</h1>
+            <h2>Use the links below to get in touch.</h2>
+            <p>
+                <a href="https://michaelba21.github.io/CV1/" target="_blank" rel="noopener noreferrer" aria-label="Visit my CV page">Curriculum Vitae</a> |
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile">LinkedIn</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <a class="science" href="https://michaelba21.github.io/animation/" aria-label="animations">Animations</a>
+    </footer>
+
+    <!-- Include particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Define the particle configuration as a JavaScript object
+        const particlesConfig = {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        };
+
+        // Initialize particles.js with the configuration
+        particlesJS('particles-js', particlesConfig, function() {
+            console.log('Particles.js loaded successfully!');
+        });
+    </script>
+</body>
+</html>
